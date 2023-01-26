@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Resi-Verband-Infos
 // @namespace    http://tampermonkey.net/
-// @version      0.0.2
+// @version      0.0.3
 // @description  shows more information for rettungssimulator.online
 // @author       QuCla
 // @match        https://rettungssimulator.online/*
@@ -16,7 +16,7 @@
     let neuText = 'Teeeest';
     let Einschub = document.createElement('a');
 
-    document.getElementsByClassName('brand').after(Einschub);
+    document.getElementsByClassName('brand')[0].after(Einschub);
 
     Einschub.innerHTML = neuText;
 
