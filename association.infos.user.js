@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Resi-Verband-Infos
 // @namespace    http://tampermonkey.net/
-// @version      0.0.3
+// @version      0.0.4
 // @description  shows more information for rettungssimulator.online
 // @author       QuCla
 // @match        https://rettungssimulator.online/*
@@ -18,7 +18,17 @@
 
     document.getElementsByClassName('brand')[0].after(Einschub);
 
-    Einschub.innerHTML = neuText;
+    $.ajax({
+        url: "/api/association/",
+        dataType: "json",
+        type : "GET",
+        success : function(r) {
+            var VName = r.associationName.toLocaleString();
+            //ausgabe.innerHTML= "Verband: " + VName;
+            }
+        });   
+    
+    Einschub.innerHTML = VName;
 
 
     /*let ausgabe = document.createElement("div");
@@ -26,15 +36,7 @@
 
     Länge abfragen mit var x = var.length
 
-
-    $.ajax({
-        url: "/api/association/",
-        dataType: "json",
-        type : "GET",
-        success : function(r) {
-            var VName = r.associationName.toLocaleString();
-            ausgabe.innerHTML= "Verband: " + VName;
-            }
-        });*/
+*/
+    
 })
 ();
