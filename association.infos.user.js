@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Resi-Verband-Infos
 // @namespace    http://tampermonkey.net/
-// @version      0.0.1
+// @version      0.0.2
 // @description  shows more information for rettungssimulator.online
 // @author       QuCla
 // @match        https://rettungssimulator.online/*
@@ -13,13 +13,19 @@
 
 (function() {
     'use strict';
-    //var ausgabe = document.createElement("div");
-    var div = document.createElement('div');
-    div.className = 'TEST';
-    var text = document.createTextNode('TEST');
-    div.appendChild(text);
-    document.header.appendChil(div);
-    //document.getElementsByClassName("muenzen_marken")[0].after(ausgabe);
+    let neuText = 'Teeeest';
+    let Einschub = document.createElement('a');
+
+    document.getElementsByClassName('brand').after(Einschub);
+
+    Einschub.innerHTML = neuText;
+
+
+    /*let ausgabe = document.createElement("div");
+    document.getElementsByClassName("muenzen_marken")[0].after(ausgabe);
+
+    Länge abfragen mit var x = var.length
+
 
     $.ajax({
         url: "/api/association/",
@@ -29,6 +35,6 @@
             var VName = r.associationName.toLocaleString();
             ausgabe.innerHTML= "Verband: " + VName;
             }
-        });
+        });*/
 })
 ();
