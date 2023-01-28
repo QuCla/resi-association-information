@@ -10,17 +10,25 @@
 // @grant        none
 // @run-at       document-end
 // ==/UserScript==
-'use strict';
 
+
+'use strict';
+//Todo
+/*
+    Auslesen von VWert fixen
+    später einmal die werte in den Verbandsdropdown umziehen
+    Verbandsname ersetzt rettungsimulator schriftzug
+    Andere Aufhängung als sciptmanager, oder abfrage zuvor an welchem element
+
+*/
 var VName = 'Grundwert';
-var VAnzahl = 'Grundwert';
-var VSharedBuildings = 'Grundwert';
-var VWert = 'Grundwert';
-var VBank = 'Grundwert';
+var VAnzahl = 0;
+var VSharedBuildings = 0;
+var VWert = 0;
+var VBank = 0;
 var Vlink = 'https://rettungssimulator.online/association/95';
 var Einschub = document.createElement('div');
 var Testen = document.createElement('a');
-
 
 
 $.ajax({
@@ -62,5 +70,11 @@ $.ajax({
         let position1 = document.getElementById('scriptManager');
         position1.after(add1);
         add1.innerHTML = VAnzahl + ' Verbandsmitglieder';
+
+        //place new line
+        let add0 = document.createElement('li');
+        let position0 = document.getElementById('scriptManager');
+        position0.after(add0);
+        add0.innerHTML = '<hr>';
     }
 });
