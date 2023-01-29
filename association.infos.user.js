@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Resi-Verband-Infos
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @description  shows more information for rettungssimulator.online
 // @author       QuCla
 // @match        https://rettungssimulator.online/*
@@ -10,8 +10,6 @@
 // @grant        none
 // @run-at       document-end
 // ==/UserScript==
-
-
 'use strict';
 
 var anchor = 'darkMode'
@@ -53,29 +51,33 @@ function readAssociation(){
             VSharedBuildings = r.associationSharedBuildings.length;
             VBank = r.associationMuenzenBank.toLocaleString();
 
-            //place association bank amount
+            //place association credits earned
             let add4 = document.createElement('li');
             let position4 = document.getElementById(anchor);
             position4.after(add4);
             add4.innerHTML = VWert  + ' Münzen';
+            add4.setAttribute('data-tooltip', 'Anzahl aller Münzen, die Mitglieder selbst verdient haben während sie in diesem Verband waren.')
 
-            //place association bank amount
-            let add3 = document.createElement('li');
+            //place association bank amount, deactivated because not used yet
+            /*let add3 = document.createElement('li');
             let position3 = document.getElementById(anchor);
             position3.after(add3);
             add3.innerHTML = VBank  + ' Guthaben';
+            add3.setAttribute('data-tooltip', 'Guthaben welches dem Verband zur Verfügung steht.')*/
 
             //place association buildings
             let add2 = document.createElement('li');
             let position2 = document.getElementById(anchor);
             position2.after(add2);
             add2.innerHTML = VSharedBuildings + ' Gebäude';
+            add2.setAttribute('data-tooltip', 'Anzahl der freigegebenen Gebäude im Verband.')
 
             //place association member number
             let add1 = document.createElement('li');
             let position1 = document.getElementById(anchor);
             position1.after(add1);
             add1.innerHTML = VAnzahl + ' Mitglieder';
+            add1.setAttribute('data-tooltip', 'Die Anzahl an Verbandsmitgliedern.')
 
             //place new line
             let add0 = document.createElement('li');
@@ -87,4 +89,4 @@ function readAssociation(){
 }
 
 
-setTimeout(readAssociation, 500);
+setTimeout(readAssociation, 2000);
