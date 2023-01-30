@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Resi-Verband-Infos
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      0.5
 // @description  shows more information for rettungssimulator.online
 // @author       QuCla
 // @match        https://rettungssimulator.online/*
@@ -19,6 +19,7 @@ var VAnzahl = 0;
 var VSharedBuildings = 0;
 var VWert = 0;
 var VBank = 0;
+var VOnline = 0;
 var Vlink = 'https://rettungssimulator.online/association/95';
 var Einschub = document.createElement('div');
 var Testen = document.createElement('a');
@@ -54,30 +55,47 @@ function readAssociation(){
             //place association credits earned
             let add4 = document.createElement('li');
             let position4 = document.getElementById(anchor);
+            let pic4='<i class="fa-solid fa-square-up-right"></i>';
             position4.after(add4);
-            add4.innerHTML = VWert  + ' Münzen';
+            add4.innerHTML = VWert  + ' Münzen' + ' ' + pic4;
             add4.setAttribute('data-tooltip', 'Anzahl aller Münzen, die Mitglieder selbst verdient haben während sie in diesem Verband waren.')
 
-            //place association bank amount, deactivated because not used yet
+            //place association bank amount
             /*let add3 = document.createElement('li');
             let position3 = document.getElementById(anchor);
+            let pic3='<i class="fa-solid fa-piggy-bank"></i>';
             position3.after(add3);
-            add3.innerHTML = VBank  + ' Guthaben';
+            add3.innerHTML = VBank  + ' Guthaben' + ' ' + pic3;
             add3.setAttribute('data-tooltip', 'Guthaben welches dem Verband zur Verfügung steht.')*/
 
             //place association buildings
             let add2 = document.createElement('li');
             let position2 = document.getElementById(anchor);
+            let pic2='<i class="fa-solid fa-building-user"></i>';
             position2.after(add2);
-            add2.innerHTML = VSharedBuildings + ' Gebäude';
+            add2.innerHTML = VSharedBuildings + ' Gebäude' + ' ' + pic2;
             add2.setAttribute('data-tooltip', 'Anzahl der freigegebenen Gebäude im Verband.')
+
+            /*
+            //Klappt nicht, die Kachel muss dafür aufgerufen werden, im Standard HTML nicht enthalten
+            //Zyklsiche Abfrage einführen, wenn klappt
+            VOnline = document.getElementsByClassName('element-card-image element-card-image-text bg-success').innerText;
+            let add5 = document.createElement('li');
+            let position5 = document.getElementById(anchor);
+            let pic5='<i class="fa-solid fa-signal"></i>';
+            position0.after(add5);
+            add5.innerHTML = VOnline + ' Online' + ' ' + pic5;
+            add1.setAttribute('data-tooltip', 'So viele Verbandsmitgliedern sind gerade online.')*/
+
 
             //place association member number
             let add1 = document.createElement('li');
             let position1 = document.getElementById(anchor);
+            let pic1='<i class="fa-solid fa-people-group"></i>';
             position1.after(add1);
-            add1.innerHTML = VAnzahl + ' Mitglieder';
+            add1.innerHTML = VAnzahl + ' Mitglieder' + ' ' + pic1;
             add1.setAttribute('data-tooltip', 'Die Anzahl an Verbandsmitgliedern.')
+
 
             //place new line
             let add0 = document.createElement('li');
