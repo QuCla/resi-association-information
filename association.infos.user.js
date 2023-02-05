@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Resi-Verband-Infos
 // @namespace    http://tampermonkey.net/
-// @version      0.5
+// @version      0.6
 // @description  shows more information for rettungssimulator.online
 // @author       QuCla
 // @match        https://rettungssimulator.online/*
@@ -75,6 +75,9 @@ function readAssociation(){
             position2.after(add2);
             add2.innerHTML = VSharedBuildings + ' Gebäude' + ' ' + pic2;
             add2.setAttribute('data-tooltip', 'Anzahl der freigegebenen Gebäude im Verband.')
+            add2.setAttribute('class', 'frame-opener');
+            add2.setAttribute('frame', '1/1/4/5');
+            add2.setAttribute('frame-url', 'association/95#sharedBuildings');
 
             /*
             //Klappt nicht, die Kachel muss dafür aufgerufen werden, im Standard HTML nicht enthalten
@@ -95,6 +98,9 @@ function readAssociation(){
             position1.after(add1);
             add1.innerHTML = VAnzahl + ' Mitglieder' + ' ' + pic1;
             add1.setAttribute('data-tooltip', 'Die Anzahl an Verbandsmitgliedern.')
+            add1.setAttribute('class', 'frame-opener');
+            add1.setAttribute('frame', '1/1/4/5');
+            add1.setAttribute('frame-url', 'association/95#associationMembers');
 
 
             //place new line
