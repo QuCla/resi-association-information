@@ -43,8 +43,10 @@ function readAssociation(){
         success : function(r) {
             //place association name in header
             VName = r.associationName.toLocaleString();
-            document.getElementsByClassName('brand')[0].after(Einschub);
-            Einschub.innerHTML = VName;
+            //document.getElementsByClassName('brand')[0].after(Einschub);
+            //Einschub.innerHTML = VName;
+            let brand = document.getElementsByClassName('brand')[0];
+            brand.innerText = VName;
 
             //get values from API
             VAnzahl = r.associationUsers.length;
