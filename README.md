@@ -38,7 +38,7 @@ Mein Skript funktioniert zusammen mit diesem Skripten:
 
  - Du hast einen Fehler gefunden? Dann erstelle am besten ein [Issue](https://github.com/QuCla/resi-association-information/issues/new) und nenne dort zusätzlich deinen Browser.
 
- - Dir fällt noch etwas verbandsbezogenes ein was anderen auch gefallen könnte? Erstell ein Issue mit deiner Idee!
+ - Dir fällt noch etwas verbandsbezogenes ein was anderen auch gefallen könnte? Erstell ein [Issue](https://github.com/QuCla/resi-association-information/issues/new) mit deiner Idee!
 
 ## In Arbeit
 
