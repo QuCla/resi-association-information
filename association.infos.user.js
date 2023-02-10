@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Resi-Verband-Infos
 // @namespace    http://tampermonkey.net/
-// @version      0.7.5
+// @version      0.7.6
 // @description  shows more information for rettungssimulator.online
 // @author       QuCla
 // @match        https://rettungssimulator.online/*
@@ -141,13 +141,13 @@ function editDropdown(){
     });
 }
 
-
+associationMember();
 if (associationTrue == 1){
     removeparts();
     setTimeout(editDropdown, 200);
     }
 else {
-    //place association member number
+    //youre not association member
     let add6 = document.createElement('li');
     let position6 = document.getElementById(anchor);
     let pic6='<i class="fa-solid fa-circle-xmark"></i>';
