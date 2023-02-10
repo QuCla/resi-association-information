@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Resi-Verband-Infos
 // @namespace    http://tampermonkey.net/
-// @version      0.8
+// @version      0.8.3
 // @description  shows more information for rettungssimulator.online
 // @author       QuCla
 // @match        https://rettungssimulator.online/*
@@ -100,7 +100,7 @@ function editDropdown(){
             let pic3='<i class="fa-solid fa-piggy-bank"></i>';
             position3.after(add3);
             add3.innerHTML = VBank  + ' Guthaben' + ' ' + pic3;
-            add3.setAttribute('data-tooltip', 'Guthaben welches dem Verband zur Verfügung steht.')*/
+            add3.setAttribute('data-tooltip', 'Guthaben welches dem Verband aktuell zur Verfügung steht.')*/
 
             //place association buildings
             let add2 = document.createElement('li');

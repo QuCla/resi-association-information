@@ -45,7 +45,7 @@ Mein Skript funktioniert zusammen mit diesem Skripten:
 - [x]   | Ausgabe Mitglieder Anzahl im Dropdownmenu
 - [x]   | Ausgabe Gesamt verdiente Münzen im Dropdownmenu
 - [x]   | Ausgabe Anzahl Verbandsgebäude
-- [ ]   | Abfrage ob Mitglied eines Verbandes
+- [x]   | Abfangen von Nicht-Verbandsmitgliedern
 - [ ]   | Anzeige Anzahl Mitglieder Online
 - [ ]   | Ausgabe Verbandsposition
 - [ ]   | ...
