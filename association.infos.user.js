@@ -20,21 +20,25 @@ var VSharedBuildings = 0;
 var VWert = 0;
 var VBank = 0;
 var VOnline = 0;
-var Vlink = 'https://rettungssimulator.online/association/95';
+var VID = 0;
 var Einschub = document.createElement('div');
 var Testen = document.createElement('a');
 
 function associationMember(){
+    var answer = 3;
+    var VTest = '';
     $.ajax({
         url: "/api/association/",
         dataType: "json",
         type : "GET",
-        success : function(r) {            
-            VName = r.associationName.toLocaleString();
-            if (VName != 'null'){
-                associationTrue = 1
-        }
-    }})
+        success : function(r) {
+            VTest = r.status;
+            }
+        })
+    if (VTest != 'error'){
+        answer = 1;
+    return answer;
+    }
 }
 
 function removeparts(){
@@ -80,6 +84,7 @@ function editDropdown(){
             VWert = r.associationMuenzenTotal.toLocaleString();
             VSharedBuildings = r.associationSharedBuildings.length;
             VBank = r.associationMuenzenBank.toLocaleString();
+            VID = r.associationID.toLocaleString();
 
             //place association credits earned
             let add4 = document.createElement('li');
@@ -106,7 +111,7 @@ function editDropdown(){
             add2.setAttribute('data-tooltip', 'Anzahl der freigegebenen Gebäude im Verband.')
             add2.setAttribute('class', 'frame-opener');
             add2.setAttribute('frame', '1/1/4/5');
-            add2.setAttribute('frame-url', 'association/95#sharedBuildings');
+            add2.setAttribute('frame-url', 'association/'+ VID +'#sharedBuildings');
 
             /*
             //Klappt nicht, die Kachel muss dafür aufgerufen werden, im Standard HTML nicht enthalten
@@ -129,7 +134,7 @@ function editDropdown(){
             add1.setAttribute('data-tooltip', 'Die Anzahl an Verbandsmitgliedern.')
             add1.setAttribute('class', 'frame-opener');
             add1.setAttribute('frame', '1/1/4/5');
-            add1.setAttribute('frame-url', 'association/95#associationMembers');
+            add1.setAttribute('frame-url', 'association/'+ VID +'#associationMembers');
 
 
             //place new line
@@ -141,17 +146,29 @@ function editDropdown(){
     });
 }
 
-associationMember();
+associationTrue = associationMember();
+
 if (associationTrue == 1){
     removeparts();
     setTimeout(editDropdown, 200);
     }
 else {
-    //youre not association member
+    removeparts();
+
+    if (document.getElementById('scriptManager') == null) {
+        //alert("The element doesn't exists");
+        anchor = 'darkMode';
+    }
+    else {
+        //alert("The element does not exist");
+        anchor = 'scriptManager';
+    }
+
+    //place association member number
     let add6 = document.createElement('li');
     let position6 = document.getElementById(anchor);
     let pic6='<i class="fa-solid fa-circle-xmark"></i>';
-    position6.after(add1);
+    position6.after(add6);
     add6.innerHTML = 'Kein Verband' + ' ' + pic6;
     add6.setAttribute('data-tooltip', 'Du bist noch keinem Verband beigetreten.')
 
