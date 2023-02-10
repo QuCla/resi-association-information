@@ -20,7 +20,7 @@ Bei diesen Browser klappt das Skript:
 | Safari  | :grey_question:             |
 | Chrome  | :hourglass_flowing_sand:    |
 | Opera   | :grey_question:             |
-| IE      | :grey_question:             |
+| IE      | :hourglass_flowing_sand:    |
 | Edge    | :grey_question:             |
 | Firefox | :ballot_box_with_check:     |
 
