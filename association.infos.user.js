@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Resi-Verband-Infos
 // @namespace    http://tampermonkey.net/
-// @version      0.7.1
+// @version      0.7.2
 // @description  shows more information for rettungssimulator.online
 // @author       QuCla
 // @match        https://rettungssimulator.online/*
@@ -40,7 +40,7 @@ function readAssociation(){
         dataType: "json",
         type : "GET",
         success : function(r) {
-            
+
             //place association name in header
             VName = r.associationName.toLocaleString();
             let brand = document.getElementsByClassName('brand')[0].lastChild;
@@ -51,13 +51,13 @@ function readAssociation(){
                 }
 
             //remove mark container
-            let mark = document.getElementsByClassName('marken-container frame-opener')[0];
-            mark.remove();
-            mark = document.getElementsByClassName('muenzen_marken')[0];
-            mark = mark.firstChild;
-            mark = mark.nextSibling;
-            mark = mark.nextSibling;
-            mark.remove();
+            let marken = document.getElementsByClassName('marken-container frame-opener')[0];
+            marken.remove();
+            marken = document.getElementsByClassName('muenzen_marken')[0];
+            marken = marken.firstChild;
+            marken = marken.nextSibling;
+            marken = marken.nextSibling;
+            marken.remove();
 
             //get values from API
             VAnzahl = r.associationUsers.length;
