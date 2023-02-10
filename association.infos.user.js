@@ -24,7 +24,19 @@ var Einschub = document.createElement('div');
 var Testen = document.createElement('a');
 
 
-function readAssociation(){
+function removeparts(){
+
+    //remove mark container
+    let marken = document.getElementsByClassName('marken-container frame-opener')[0];
+    marken.remove();
+    marken = document.getElementsByClassName('muenzen_marken')[0];
+    marken = marken.firstChild;
+    marken = marken.nextSibling;
+    marken = marken.nextSibling;
+    marken.remove();
+}
+
+function editDropdown(){
 
     if (document.getElementById('scriptManager') == null) {
         //alert("The element doesn't exists");
@@ -49,15 +61,6 @@ function readAssociation(){
             if (check == 'Rettungssimulator'){
                 brand.textContent = VName;
                 }
-
-            //remove mark container
-            let marken = document.getElementsByClassName('marken-container frame-opener')[0];
-            marken.remove();
-            marken = document.getElementsByClassName('muenzen_marken')[0];
-            marken = marken.firstChild;
-            marken = marken.nextSibling;
-            marken = marken.nextSibling;
-            marken.remove();
 
             //get values from API
             VAnzahl = r.associationUsers.length;
@@ -125,5 +128,5 @@ function readAssociation(){
     });
 }
 
-
-setTimeout(readAssociation, 200);
+removeparts();
+setTimeout(editDropdown, 200);
