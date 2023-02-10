@@ -30,7 +30,9 @@ Bei diesen Browser klappt das Skript:
 Mein Skript funktioniert zusammen mit diesem Skripten:
 
 :ballot_box_with_check: [Resi](https://github.com/TheKeineAhnung/resi-script-manager) Script Manager by KeineAhnung
+
 :ballot_box_with_check: [Uhr](https://forum.rettungssimulator.online/index.php?thread/1454-uhr/&postID=7948&highlight=uhr#post7948) by NiZi112
+
 :ballot_box_with_check: [Current Rank](https://github.com/QuCla/resi-rank-navleiste) by QuCla
 
 
