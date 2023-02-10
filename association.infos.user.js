@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Resi-Verband-Infos
 // @namespace    http://tampermonkey.net/
-// @version      0.7.2
+// @version      0.7.3
 // @description  shows more information for rettungssimulator.online
 // @author       QuCla
 // @match        https://rettungssimulator.online/*
@@ -74,7 +74,7 @@ function editDropdown(){
             let pic4='<i class="fa-solid fa-square-up-right"></i>';
             position4.after(add4);
             add4.innerHTML = VWert  + ' Münzen' + ' ' /*+ pic4*/;
-            add4.setAttribute('data-tooltip', 'Anzahl aller Münzen, die Mitglieder selbst verdient haben während sie in diesem Verband waren.')
+            add4.setAttribute('data-tooltip', 'Anzahl aller Münzen, die Mitglieder verdient haben während sie in diesem Verband waren.')
 
             //place association bank amount
             /*let add3 = document.createElement('li');
