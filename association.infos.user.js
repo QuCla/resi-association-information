@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Resi-Verband-Infos
 // @namespace    http://tampermonkey.net/
-// @version      0.6.4
+// @version      0.6.5
 // @description  shows more information for rettungssimulator.online
 // @author       QuCla
 // @match        https://rettungssimulator.online/*
@@ -43,7 +43,10 @@ function readAssociation(){
             //place association name in header
             VName = r.associationName.toLocaleString();
             let brand = document.getElementsByClassName('brand')[0].lastChild;
-            brand.textContent = VName;
+            let check = brand.textContent;
+            if (check == '\n            Rettungssimulator\n                    '){
+                brand.textContent = VName;
+                }
 
             //get values from API
             VAnzahl = r.associationUsers.length;
