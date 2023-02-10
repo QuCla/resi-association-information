@@ -6,6 +6,7 @@
 Das Skript funktioniert für die Webseite [@Rettungssimulator](https://github.cim/Rettungssimulator).
 
 Installation einfach hier: [`MAI.user.js`](https://github.com/QuCla/resi-association-information/raw/master/association.infos.user.js)
+
 Alle meine Skripte: [Repository](https://github.com/QuCla?tab=repositories)
 
 
