@@ -113,18 +113,6 @@ function editDropdown(){
             add2.setAttribute('frame', '1/1/4/5');
             add2.setAttribute('frame-url', 'association/'+ VID +'#sharedBuildings');
 
-            /*
-            //Klappt nicht, die Kachel muss dafür aufgerufen werden, im Standard HTML nicht enthalten
-            //Zyklsiche Abfrage einführen, wenn klappt
-            VOnline = document.getElementsByClassName('element-card-image element-card-image-text bg-success').innerText;
-            let add5 = document.createElement('li');
-            let position5 = document.getElementById(anchor);
-            let pic5='<i class="fa-solid fa-signal"></i>';
-            position0.after(add5);
-            add5.innerHTML = VOnline + ' Online' + ' ' + pic5;
-            add1.setAttribute('data-tooltip', 'So viele Verbandsmitgliedern sind gerade online.')*/
-
-
             //place association member number
             let add1 = document.createElement('li');
             let position1 = document.getElementById(anchor);
