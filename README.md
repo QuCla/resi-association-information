@@ -6,14 +6,15 @@
 Das Skript funktioniert für die Webseite [@Rettungssimulator](https://github.cim/Rettungssimulator).
 
 Installation einfach hier: [`MAI.user.js`](https://github.com/QuCla/resi-association-information/raw/master/association.infos.user.js)
+Alle meine Skripte: [Repository](https://github.com/QuCla?tab=repositories)
 
 
 ## Supported Browsers
 
-Diese Browser haben wir mit dem Skript getestet:
+Bei diesen Browser klappt das Skript:
 
 
-| Browser | Supported               |
+| Browser | Unterstützt             |
 | ------- | ----------------------- |
 | Safari  | :grey_question:         |
 | Chrome  | :ballot_box_with_check: |
@@ -31,5 +32,9 @@ Diese Browser haben wir mit dem Skript getestet:
 
 ## In Arbeit
 
-- [x] | Ausgabe Mitglieder Anzahl im Dropdownmenu
-- [ ] | ToDo
+- [x]   | Ausgabe Mitglieder Anzahl im Dropdownmenu
+- [x]   | Ausgabe Gesamt verdiente Münzen im Dropdownmenu
+- [x]   | Ausgabe Anzahl Verbandsgebäude
+- [ ]   | Anzeige Anzahl Mitglieder Online
+- [ ]   | Ausgabe Verbandsposition
+- [ ]   | ...
