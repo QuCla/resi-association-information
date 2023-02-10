@@ -15,14 +15,14 @@ Alle meine Skripte: [Repository](https://github.com/QuCla?tab=repositories)
 Bei diesen Browser klappt das Skript:
 
 
-| Browser | Unterstützt             |
-| ------- | ----------------------- |
-| Safari  | :grey_question:         |
-| Chrome  | :ballot_box_with_check: |
-| Opera   | :grey_question:         |
-| IE      | :grey_question:         |
-| Edge    | :grey_question:         |
-| Firefox | :ballot_box_with_check: |
+| Browser | Unterstützt                 |
+| ------- | --------------------------- |
+| Safari  | :grey_question:             |
+| Chrome  | :hourglass_flowing_sand:    |
+| Opera   | :grey_question:             |
+| IE      | :grey_question:             |
+| Edge    | :grey_question:             |
+| Firefox | :ballot_box_with_check:     |
 
 
 ## Supported Scripts
