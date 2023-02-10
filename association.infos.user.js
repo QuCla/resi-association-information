@@ -113,7 +113,7 @@ function editDropdown(){
             add2.setAttribute('frame', '1/1/4/5');
             add2.setAttribute('frame-url', 'association/'+ VID +'#sharedBuildings');
 
-            /*
+            /*Für parallel Branch
             //Klappt nicht, die Kachel muss dafür aufgerufen werden, im Standard HTML nicht enthalten
             //Zyklsiche Abfrage einführen, wenn klappt
             VOnline = document.getElementsByClassName('element-card-image element-card-image-text bg-success').innerText;
