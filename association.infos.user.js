@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Resi-Verband-Infos
 // @namespace    http://tampermonkey.net/
-// @version      0.7.3
+// @version      0.7.5
 // @description  shows more information for rettungssimulator.online
 // @author       QuCla
 // @match        https://rettungssimulator.online/*
@@ -12,6 +12,7 @@
 'use strict';
 
 var anchor = 'darkMode'
+var associationTrue = 0
 
 var VName = 'Grundwert';
 var VAnzahl = 0;
@@ -23,6 +24,18 @@ var Vlink = 'https://rettungssimulator.online/association/95';
 var Einschub = document.createElement('div');
 var Testen = document.createElement('a');
 
+function associationMember(){
+    $.ajax({
+        url: "/api/association/",
+        dataType: "json",
+        type : "GET",
+        success : function(r) {            
+            VName = r.associationName.toLocaleString();
+            if (VName != 'null'){
+                associationTrue = 1
+        }
+    }})
+}
 
 function removeparts(){
 
@@ -128,5 +141,24 @@ function editDropdown(){
     });
 }
 
-removeparts();
-setTimeout(editDropdown, 200);
+
+if (associationTrue == 1){
+    removeparts();
+    setTimeout(editDropdown, 200);
+    }
+else {
+    //place association member number
+    let add6 = document.createElement('li');
+    let position6 = document.getElementById(anchor);
+    let pic6='<i class="fa-solid fa-circle-xmark"></i>';
+    position6.after(add1);
+    add6.innerHTML = 'Kein Verband' + ' ' + pic6;
+    add6.setAttribute('data-tooltip', 'Du bist noch keinem Verband beigetreten.')
+
+
+    //place new line
+    let add0 = document.createElement('li');
+    let position0 = document.getElementById(anchor);
+    position0.after(add0);
+    add0.innerHTML = '<hr>';
+    }
