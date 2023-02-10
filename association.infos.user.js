@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Resi-Verband-Infos
 // @namespace    http://tampermonkey.net/
-// @version      0.6.6
+// @version      0.7
 // @description  shows more information for rettungssimulator.online
 // @author       QuCla
 // @match        https://rettungssimulator.online/*
@@ -47,6 +47,15 @@ function readAssociation(){
             if (check == '\n            Rettungssimulator\n                    '){
                 brand.textContent = VName;
                 }
+
+            //remove mark container
+            let mark = document.getElementsByClassName('marken-container frame-opener')[0];
+            mark.remove();
+            mark = document.getElementsByClassName('muenzen_marken')[0];
+            mark = mark.firstChild;
+            mark = mark.nextSibling;
+            mark = mark.nextSibling;
+            mark.remove();
 
             //get values from API
             VAnzahl = r.associationUsers.length;

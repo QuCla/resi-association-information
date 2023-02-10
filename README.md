@@ -25,6 +25,15 @@ Bei diesen Browser klappt das Skript:
 | Firefox | :ballot_box_with_check: |
 
 
+## Supported Scripts
+
+Mein Skript funktioniert zusammen mit diesem Skripten:
+
+:ballot_box_with_check: Resi Script Manager by [KeineAhnung]()
+:ballot_box_with_check: Uhr by [NiZi112]()
+:ballot_box_with_check: Current Rank by [QuCla]()
+
+
 ## Bugs & Vorschläge
 
  - Du hast einen Fehler gefunden? Dann erstelle am besten ein [Issue](https://github.com/QuCla/resi-association-information/issues/new) und nenne dort zusätzlich deinen Browser.
