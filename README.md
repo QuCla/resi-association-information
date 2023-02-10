@@ -29,5 +29,5 @@ Diese Browser haben wir mit dem Skript getestet:
 
 ## In Arbeit
 
-:ballot_box_with_check: | Ausgabe Mitglieder Anzahl im Dropdownmenu/n
-:black_large_square:    | ToDo
+- [x] | Ausgabe Mitglieder Anzahl im Dropdownmenu
+- [ ] | ToDo
