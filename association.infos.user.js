@@ -13,6 +13,7 @@
 
 var anchor = 'darkMode'
 var associationTrue = 0
+var delayTime = 300 // Verzugszeit zum Start des Skriptes
 
 var VName = 'Grundwert';
 var VAnzahl = 0;
@@ -138,7 +139,7 @@ associationTrue = associationMember();
 
 if (associationTrue == 1){
     removeparts();
-    setTimeout(editDropdown, 200);
+    setTimeout(editDropdown, delayTime);
     }
 else {
     removeparts();
