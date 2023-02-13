@@ -12,13 +12,13 @@ Alle meine Skripte: [Repository](https://github.com/QuCla?tab=repositories)
 
 ## Supported Browsers
 
-Bei diesen Browser klappt das Skript:
+Bei diesen Browser klappt das Skript: 
 
 
 | Browser | Unterstützt                 |
 | ------- | --------------------------- |
 | Safari  | :grey_question:             |
-| Chrome  | :hourglass_flowing_sand:    |
+| Chrome  | :ballot_box_with_check:     |
 | Opera   | :grey_question:             |
 | IE      | :hourglass_flowing_sand:    |
 | Edge    | :grey_question:             |
