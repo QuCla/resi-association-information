@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Resi-Verband-Infos
 // @namespace    http://tampermonkey.net/
-// @version      0.8.5
+// @version      0.8.15
 // @description  shows more information for rettungssimulator.online
 // @author       QuCla
 // @match        https://rettungssimulator.online/*
@@ -142,11 +142,11 @@ function editDropdown(){
 associationTrue = associationMember();
 
 if (associationTrue == 1){
-    removeparts();
+    //removeparts();
     setTimeout(editDropdown, 50); // Verzögerung damit Script nach ScriptManager und Codebase läuft
     }
 else {
-    removeparts();
+    //removeparts();
 
     anchor = decideAnchor();
 
