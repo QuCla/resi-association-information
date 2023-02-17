@@ -30,7 +30,7 @@ Bei diesen Browser klappt das Skript:
 Mein Skript funktioniert zusammen mit diesem Skripten:
 
 - :ballot_box_with_check: [Resi Script Manager](https://github.com/TheKeineAhnung/resi-script-manager) by KeineAhnung
-- :ballot_box_with_check: [CodebaseV23](https://github.com/Notme112/codebase-v2) by NiZi112
+- :ballot_box_with_check: [CodebaseV2](https://github.com/Notme112/codebase-v2) by NiZi112
 
 
 ## Bugs & Vorschläge
