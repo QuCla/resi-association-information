@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Resi-Verband-Infos
 // @namespace    http://tampermonkey.net/
-// @version      0.8.15
+// @version      0.8.6
 // @description  shows more information for rettungssimulator.online
 // @author       QuCla
 // @match        https://rettungssimulator.online/*
