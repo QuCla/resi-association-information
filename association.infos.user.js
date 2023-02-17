@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Resi-Verband-Infos
 // @namespace    http://tampermonkey.net/
-// @version      0.8.3
+// @version      0.8.5
 // @description  shows more information for rettungssimulator.online
 // @author       QuCla
 // @match        https://rettungssimulator.online/*
@@ -11,9 +11,8 @@
 // ==/UserScript==
 'use strict';
 
-var anchor = 'darkMode'
 var associationTrue = 0
-var delayTime = 300 // Verzugszeit zum Start des Skriptes
+var anchor = 'darkMode';
 
 var VName = 'Grundwert';
 var VAnzahl = 0;
@@ -22,8 +21,17 @@ var VWert = 0;
 var VBank = 0;
 var VOnline = 0;
 var VID = 0;
-var Einschub = document.createElement('div');
-var Testen = document.createElement('a');
+var drawer = document.createElement('div');
+
+function decideAnchor(){
+    let setanchor = 'darkMode';
+
+    if (document.getElementById('scriptManager') != null) {
+        setanchor = 'scriptManager';
+    }
+
+    return setanchor;
+}
 
 function associationMember(){
     var answer = 3;
@@ -56,14 +64,7 @@ function removeparts(){
 
 function editDropdown(){
 
-    if (document.getElementById('scriptManager') == null) {
-        //alert("The element doesn't exists");
-        anchor = 'darkMode';
-    }
-    else {
-        //alert("The element does not exist");
-        anchor = 'scriptManager';
-    }
+    anchor = decideAnchor();
 
     $.ajax({
         url: "/api/association/",
@@ -87,50 +88,53 @@ function editDropdown(){
             VBank = r.associationMuenzenBank.toLocaleString();
             VID = r.associationID.toLocaleString();
 
-            //place association credits earned
-            let add4 = document.createElement('li');
-            let position4 = document.getElementById(anchor);
-            let pic4='<i class="fa-solid fa-square-up-right"></i>';
-            position4.after(add4);
-            add4.innerHTML = VWert  + ' Münzen' + ' ' /*+ pic4*/;
-            add4.setAttribute('data-tooltip', 'Anzahl aller Münzen, die Mitglieder verdient haben während sie in diesem Verband waren.')
+            //Container Verbandsmünzen
+            let muenzen = document.createElement('li');
+            let I_muenzen = '<i class="fa-solid fa-square-up-right"></i>';
+            muenzen.innerHTML = VWert  + ' Münzen' + ' ' /*+ I_muenzen*/;
+            muenzen.setAttribute('data-tooltip', 'Anzahl aller Münzen, die Mitglieder verdient haben während sie in diesem Verband waren.')
 
-            //place association bank amount
-            /*let add3 = document.createElement('li');
-            let position3 = document.getElementById(anchor);
-            let pic3='<i class="fa-solid fa-piggy-bank"></i>';
-            position3.after(add3);
-            add3.innerHTML = VBank  + ' Guthaben' + ' ' + pic3;
-            add3.setAttribute('data-tooltip', 'Guthaben welches dem Verband aktuell zur Verfügung steht.')*/
+            //Container Verbandsgebäude
+            let gebaude = document.createElement('li');
+            let I_gebaude = '<i class="fa-solid fa-building-user"></i>';
+            gebaude.innerHTML = VSharedBuildings + ' Gebäude' + ' ' + I_gebaude;
+            gebaude.setAttribute('data-tooltip', 'Anzahl der freigegebenen Gebäude im Verband.')
+            gebaude.setAttribute('class', 'frame-opener');
+            gebaude.setAttribute('frame', '1/1/4/5');
+            gebaude.setAttribute('frame-url', 'association/'+ VID +'#sharedBuildings');
 
-            //place association buildings
-            let add2 = document.createElement('li');
-            let position2 = document.getElementById(anchor);
-            let pic2='<i class="fa-solid fa-building-user"></i>';
-            position2.after(add2);
-            add2.innerHTML = VSharedBuildings + ' Gebäude' + ' ' + pic2;
-            add2.setAttribute('data-tooltip', 'Anzahl der freigegebenen Gebäude im Verband.')
-            add2.setAttribute('class', 'frame-opener');
-            add2.setAttribute('frame', '1/1/4/5');
-            add2.setAttribute('frame-url', 'association/'+ VID +'#sharedBuildings');
+            //Container Mitgliederanzahl
+            let member = document.createElement('li');
+            let I_member = '<i class="fa-solid fa-people-group"></i>';
+            member.innerHTML = VAnzahl + ' Mitglieder' + ' ' + I_member;
+            member.setAttribute('data-tooltip', 'Die Anzahl an Verbandsmitgliedern.')
+            member.setAttribute('class', 'frame-opener');
+            member.setAttribute('frame', '1/1/4/5');
+            member.setAttribute('frame-url', 'association/'+ VID +'#associationMembers');
 
-            //place association member number
-            let add1 = document.createElement('li');
-            let position1 = document.getElementById(anchor);
-            let pic1='<i class="fa-solid fa-people-group"></i>';
-            position1.after(add1);
-            add1.innerHTML = VAnzahl + ' Mitglieder' + ' ' + pic1;
-            add1.setAttribute('data-tooltip', 'Die Anzahl an Verbandsmitgliedern.')
-            add1.setAttribute('class', 'frame-opener');
-            add1.setAttribute('frame', '1/1/4/5');
-            add1.setAttribute('frame-url', 'association/'+ VID +'#associationMembers');
+            //Container Bank -- Implementierung abwarten --
+            /*
+            let bank = document.createElement('li');
+            let I_bank = '<i class="fa-solid fa-piggy-bank"></i>';
+            bank.innerHTML = VBank  + ' Guthaben' + ' ' + I_bank;
+            bank.setAttribute('data-tooltip', 'Guthaben welches dem Verband aktuell zur Verfügung steht.')
+            */
 
+            //Einschub erstellen in Dropdown-Liste
+            drawer.setAttribute('id', 'moreAssociation')
+            let pos = document.getElementById(anchor);
+            pos.after(drawer);
 
-            //place new line
-            let add0 = document.createElement('li');
-            let position0 = document.getElementById(anchor);
-            position0.after(add0);
-            add0.innerHTML = '<hr>';
+            //Linie zur Begrenzung
+            let line = document.createElement('li');
+            line.innerHTML = '<hr>';
+
+            //Kinder anhängen
+            drawer.appendChild(line);
+            drawer.appendChild(member);
+            drawer.appendChild(gebaude);
+            //drawer.appendChild(bank);
+            drawer.appendChild(muenzen);
         }
     });
 }
@@ -139,19 +143,12 @@ associationTrue = associationMember();
 
 if (associationTrue == 1){
     removeparts();
-    setTimeout(editDropdown, delayTime);
+    setTimeout(editDropdown, 50); // Verzögerung damit Script nach ScriptManager und Codebase läuft
     }
 else {
     removeparts();
 
-    if (document.getElementById('scriptManager') == null) {
-        //alert("The element doesn't exists");
-        anchor = 'darkMode';
-    }
-    else {
-        //alert("The element does not exist");
-        anchor = 'scriptManager';
-    }
+    anchor = decideAnchor();
 
     //place association member number
     let add6 = document.createElement('li');
