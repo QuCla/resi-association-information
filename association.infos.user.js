@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Resi-Verband-Infos
+// @name         ReSi - Verband-Infos
 // @namespace    http://tampermonkey.net/
 // @version      0.8.3
 // @description  shows more information for rettungssimulator.online
