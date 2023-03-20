@@ -1,3 +1,9 @@
+[![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)](https://www.javascript.com)
+![GitHub package.json version](https://img.shields.io/badge/version-v0.8.6-orange)
+![GitHub](https://img.shields.io/github/license/qucla/resi-association-information)
+![GitHub](https://img.shields.io/badge/status-in%20dev-f82c00)
+
+
 # More Association Informations (MAI)
 
 - (EN) - english version in work
