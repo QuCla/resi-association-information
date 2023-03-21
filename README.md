@@ -6,7 +6,7 @@
 
 # More Association Informations (MAI)
 
-- (EN) - english version in work
+- (EN) - [english version in work](https://github.com/QuCla/resi-association-information/raw/master/README_EN.md)
 - (DE) - Mit dem MAI - mehr Verbands-Informationen, möchte ich euch ein Skript bereitstellen das Verbandsinfos gesammelt darstellt.
 
 Das Skript funktioniert für die Webseite [@Rettungssimulator](https://github.cim/Rettungssimulator).
