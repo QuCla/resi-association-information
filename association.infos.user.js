@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Resi-Verband-Infos
 // @namespace    http://tampermonkey.net/
-// @version      0.8.6
+// @version      0.9
 // @description  shows more information for rettungssimulator.online
 // @author       QuCla
 // @match        https://rettungssimulator.online/*
@@ -48,18 +48,6 @@ function associationMember(){
         answer = 1;
     return answer;
     }
-}
-
-function removeparts(){
-
-    //remove mark container
-    let marken = document.getElementsByClassName('marken-container frame-opener')[0];
-    marken.remove();
-    marken = document.getElementsByClassName('muenzen_marken')[0];
-    marken = marken.firstChild;
-    marken = marken.nextSibling;
-    marken = marken.nextSibling;
-    marken.remove();
 }
 
 function editDropdown(){
@@ -142,11 +130,9 @@ function editDropdown(){
 associationTrue = associationMember();
 
 if (associationTrue == 1){
-    //removeparts();
     setTimeout(editDropdown, 50); // Verzögerung damit Script nach ScriptManager und Codebase läuft
     }
 else {
-    //removeparts();
 
     anchor = decideAnchor();
 
