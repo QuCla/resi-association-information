@@ -23,8 +23,8 @@ Bei diesen Browser klappt das Skript:
 
 | Browser | Unterstützt                 |
 | ------- | --------------------------- |
-| ![Opera](https://img.shields.io/badge/Opera-FF1B2D?style=for-the-badge&logo=Opera&logoColor=white)                           | :grey_question:             |
-| ![Edge](https://img.shields.io/badge/Edge-0078D7?style=for-the-badge&logo=Microsoft-edge&logoColor=white)                    | :grey_question:             |
+| ![Opera](https://img.shields.io/badge/Opera-FF1B2D?style=for-the-badge&logo=Opera&logoColor=white)                           | :ballot_box_with_check:     |
+| ![Edge](https://img.shields.io/badge/Edge-0078D7?style=for-the-badge&logo=Microsoft-edge&logoColor=white)                    | :ballot_box_with_check:     |
 | ![Google Chrome](https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white)  | :ballot_box_with_check:     |
 | ![Firefox](https://img.shields.io/badge/Firefox-FF7139?style=for-the-badge&logo=Firefox-Browser&logoColor=white)             | :ballot_box_with_check:     |
 
