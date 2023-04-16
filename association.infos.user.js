@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Resi-Verband-Infos
 // @namespace    http://tampermonkey.net/
-// @version      0.9
+// @version      1.0
 // @description  shows more information for rettungssimulator.online
 // @author       QuCla
 // @match        https://rettungssimulator.online/*
@@ -60,21 +60,36 @@ function editDropdown(){
         type : "GET",
         success : function(r) {
 
-            //place association name in header
-            VName = r.associationName.toLocaleString();
-            let brand = document.getElementsByClassName('brand')[0].lastChild;
-            let check = brand.textContent;
-            check = check.trim();
-            if (check == 'Rettungssimulator'){
-                brand.textContent = VName;
-                }
-
             //get values from API
+            VName = r.associationName.toLocaleString();
             VAnzahl = r.associationUsers.length;
             VWert = r.associationMuenzenTotal.toLocaleString();
             VSharedBuildings = r.associationSharedBuildings.length;
             VBank = r.associationMuenzenBank.toLocaleString();
             VID = r.associationID.toLocaleString();
+
+            //place association name in header
+            let brand = document.getElementsByClassName('brand')[0].lastChild;
+            let check = brand.textContent;
+            check = check.trim();
+            if (check == 'Rettungssimulator'){
+                brand.textContent = '';
+                }
+
+            let brands = document.getElementsByClassName('brand')[0];
+            
+            brands.setAttribute('data-tooltip', 'Klicke um zur Verbandsseite zu gelangen.')
+            brands.setAttribute('class', 'frame-opener');
+            brands.setAttribute('frame', '1/1/4/5');
+            brands.setAttribute('frame-url', 'association/'+ VID);
+            
+            let BrandText = document.createElement('div');
+            let BrandLinkLogo = '<i class="fa-solid fa-arrow-up-right-from-square"></i>';
+
+            BrandText.setAttribute('class', 'brand');
+            BrandText.innerHTML = VName + "\f" + BrandLinkLogo;
+
+            brands.appendChild(BrandText);
 
             //Container Verbandsmünzen
             let muenzen = document.createElement('li');

@@ -1,7 +1,7 @@
 [![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)](https://www.javascript.com)
-![GitHub package.json version](https://img.shields.io/badge/version-v0.9-orange)
+![GitHub package.json version](https://img.shields.io/badge/version-v1.0-orange)
 ![GitHub](https://img.shields.io/github/license/qucla/resi-association-information)
-![GitHub](https://img.shields.io/badge/status-in%20dev-ff0000)
+![GitHub](https://img.shields.io/badge/status-done-ff0000)
 
 
 # More Association Informations (MAI)
@@ -48,4 +48,4 @@ I tested the compability with these other scripts:
 - [x]   | Script doesn't work for non association member
 - [ ]   | Output of members online
 - [ ]   | Output association rank position
-- [ ]   | ...
+- [x]   | clickable Link on association name
