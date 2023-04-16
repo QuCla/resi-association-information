@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         Resi-Verband-Infos
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.0.1
 // @description  shows more information for rettungssimulator.online
 // @author       QuCla
 // @match        https://rettungssimulator.online/*
+// @downloadURL  https://github.com/QuCla/resi-association-information/raw/master/association.infos.user.js
 // @updateURL    https://github.com/QuCla/resi-association-information/raw/master/association.infos.user.js
 // @grant        none
 // @run-at       document-end
@@ -87,7 +88,7 @@ function editDropdown(){
             let BrandLinkLogo = '<i class="fa-solid fa-arrow-up-right-from-square"></i>';
 
             BrandText.setAttribute('class', 'brand');
-            BrandText.innerHTML = VName + "\f" + BrandLinkLogo;
+            BrandText.innerHTML = VName + BrandLinkLogo;
 
             brands.appendChild(BrandText);
 
