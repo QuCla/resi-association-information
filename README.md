@@ -3,6 +3,10 @@
 ![GitHub](https://img.shields.io/github/license/qucla/resi-association-information)
 ![GitHub](https://img.shields.io/badge/status-done-ff0000)
 
+```diff
+-!! Das Script wird nicht weiter bedtreut bis zum Release des Reworks vom ReSi. !!
+```
+
 
 # More Association Informations (MAI)
 
